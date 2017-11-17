@@ -4,6 +4,7 @@ using System.Text;
 
 namespace WindowsApplication2
 {
+    [Serializable]
     class ManufacturingCompany
     {
         /************datafields*******************************************/

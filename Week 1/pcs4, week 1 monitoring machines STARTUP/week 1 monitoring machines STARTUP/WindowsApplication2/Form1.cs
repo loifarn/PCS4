@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Windows.Forms;
 using static WindowsApplication2.Machine;
@@ -114,12 +116,69 @@ namespace WindowsApplication2
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //todo
+            //Clearing all events
+            foreach(Machine m in mc.Machines)
+            {
+                m.removeAllCriticalStateHandlers();
+            }
+
+
+            //Writing to file
+            string filepath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\saveFile.bin";
+            try
+            {
+                using (FileStream fs = new FileStream(filepath, FileMode.OpenOrCreate, FileAccess.Write))
+                {
+                    BinaryFormatter bf = new BinaryFormatter();
+                    foreach(Machine m in mc.Machines)
+                    {
+                        bf.Serialize(fs, m);
+                    }
+                }
+                MessageBox.Show("Successfully saved machines to file.");
+            }
+            catch (SerializationException)
+            {
+                MessageBox.Show("Error writing to file");
+            }
+            catch (ArgumentException)
+            {
+                MessageBox.Show("No file selected");
+            }
+            catch (IOException)
+            {
+                MessageBox.Show("Error opening file");
+            }
+
         }
-        
+
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            //todo
+            try
+            {
+                string filepath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\saveFile.bin";
+
+                using (FileStream fs = new FileStream(filepath, FileMode.OpenOrCreate, FileAccess.Read))
+                {
+                    BinaryFormatter bf = new BinaryFormatter();
+                    Machine m;
+
+                    while(fs.Position < fs.Length)
+                    {
+                        m = (Machine)bf.Deserialize(fs);
+                        mc.AddMachine(m);
+                    }
+                }
+                MessageBox.Show("Successfully loaded machines from file.");
+            }
+            catch (SerializationException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (IOException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void CriticalStateReached(Machine sender, string reason)
@@ -129,6 +188,7 @@ namespace WindowsApplication2
 
         private void LogCriticalState(Machine sender, string reason)
         {
+            //Could wrap in try-catch for file errors.
             string filepath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\logging.txt";
 
             using (FileStream fw = new FileStream(filepath, FileMode.Append, FileAccess.Write))
@@ -138,7 +198,6 @@ namespace WindowsApplication2
                     sw.WriteLine($"Error on machine: {sender.Name} | Errortype: {reason} | Time: {DateTime.Now}");
                 }
             }
-    
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Text;
 
 namespace WindowsApplication2
 {
+    [Serializable]
     public class Machine
     {
         /************datafields*******************************************/
@@ -67,6 +68,10 @@ namespace WindowsApplication2
                     stateHandler(this, "pressure is too high");
                 }
             }
+        }
+        public void removeAllCriticalStateHandlers()
+        {
+            this.stateHandler = null;
         }
 
 
