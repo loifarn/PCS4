@@ -11,8 +11,9 @@ namespace WindowsApplication2
         private int temperature, pressure; //the current working temperature and the current working pressure
 
         /************delegates and events***********************************/
- 
-        //todo
+
+        public delegate void CriticalStateHandler(Machine sender, string reason);
+        public event CriticalStateHandler stateHandler;
 
         /************constructor******************************************/
         public Machine(String name, int temperature, int pressure)
@@ -30,14 +31,42 @@ namespace WindowsApplication2
         /************methods*********************************************/
         public void SetTemperature(int newTemperature)
         {
-            this.temperature = newTemperature; 
-           
+            this.temperature = newTemperature;
+
+            if (this.temperature < 80)
+            {
+                if (stateHandler != null)
+                {
+                    stateHandler(this, "temperature too low");
+                }
+            }
+            if (this.temperature > 120)
+            {
+                if (stateHandler != null)
+                {
+                    stateHandler(this, "temperature too high");
+                }
+            }
         }
 
         public void SetPressure(int newPressure)
         {
             this.pressure = newPressure;
-           
+
+            if (this.pressure < 60)
+            {
+                if (stateHandler != null)
+                {
+                    stateHandler(this, "pressure is too low");
+                }
+            }
+            if (this.pressure > 80)
+            {
+                if (stateHandler != null)
+                {
+                    stateHandler(this, "pressure is too high");
+                }
+            }
         }
 
 
