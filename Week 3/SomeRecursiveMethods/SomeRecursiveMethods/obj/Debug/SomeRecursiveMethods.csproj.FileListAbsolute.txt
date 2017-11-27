@@ -1,0 +1,10 @@
+C:\Users\Alex Pedersen\Desktop\PCS4\Week 3\SomeRecursiveMethods\SomeRecursiveMethods\bin\Debug\SomeRecursiveMethods.exe.config
+C:\Users\Alex Pedersen\Desktop\PCS4\Week 3\SomeRecursiveMethods\SomeRecursiveMethods\bin\Debug\SomeRecursiveMethods.exe
+C:\Users\Alex Pedersen\Desktop\PCS4\Week 3\SomeRecursiveMethods\SomeRecursiveMethods\bin\Debug\SomeRecursiveMethods.pdb
+C:\Users\Alex Pedersen\Desktop\PCS4\Week 3\SomeRecursiveMethods\SomeRecursiveMethods\obj\Debug\SomeRecursiveMethods.csprojResolveAssemblyReference.cache
+C:\Users\Alex Pedersen\Desktop\PCS4\Week 3\SomeRecursiveMethods\SomeRecursiveMethods\obj\Debug\SomeRecursiveMethods.Form1.resources
+C:\Users\Alex Pedersen\Desktop\PCS4\Week 3\SomeRecursiveMethods\SomeRecursiveMethods\obj\Debug\SomeRecursiveMethods.Properties.Resources.resources
+C:\Users\Alex Pedersen\Desktop\PCS4\Week 3\SomeRecursiveMethods\SomeRecursiveMethods\obj\Debug\SomeRecursiveMethods.csproj.GenerateResource.Cache
+C:\Users\Alex Pedersen\Desktop\PCS4\Week 3\SomeRecursiveMethods\SomeRecursiveMethods\obj\Debug\SomeRecursiveMethods.csproj.CoreCompileInputs.cache
+C:\Users\Alex Pedersen\Desktop\PCS4\Week 3\SomeRecursiveMethods\SomeRecursiveMethods\obj\Debug\SomeRecursiveMethods.exe
+C:\Users\Alex Pedersen\Desktop\PCS4\Week 3\SomeRecursiveMethods\SomeRecursiveMethods\obj\Debug\SomeRecursiveMethods.pdb
