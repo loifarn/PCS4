@@ -1,0 +1,20 @@
+C:\Users\Alex Pedersen\Desktop\PCS4\Week 2\pcs4, week 2 delivering deliverables STARTUP\Deliveries\bin\Debug\Deliveries.exe.config
+C:\Users\Alex Pedersen\Desktop\PCS4\Week 2\pcs4, week 2 delivering deliverables STARTUP\Deliveries\bin\Debug\Deliveries.exe
+C:\Users\Alex Pedersen\Desktop\PCS4\Week 2\pcs4, week 2 delivering deliverables STARTUP\Deliveries\bin\Debug\Deliveries.pdb
+C:\Users\Alex Pedersen\Desktop\PCS4\Week 2\pcs4, week 2 delivering deliverables STARTUP\Deliveries\obj\Debug\Deliveries.csprojResolveAssemblyReference.cache
+C:\Users\Alex Pedersen\Desktop\PCS4\Week 2\pcs4, week 2 delivering deliverables STARTUP\Deliveries\obj\Debug\Deliveries.Form1.resources
+C:\Users\Alex Pedersen\Desktop\PCS4\Week 2\pcs4, week 2 delivering deliverables STARTUP\Deliveries\obj\Debug\Deliveries.Properties.Resources.resources
+C:\Users\Alex Pedersen\Desktop\PCS4\Week 2\pcs4, week 2 delivering deliverables STARTUP\Deliveries\obj\Debug\Deliveries.csproj.GenerateResource.Cache
+C:\Users\Alex Pedersen\Desktop\PCS4\Week 2\pcs4, week 2 delivering deliverables STARTUP\Deliveries\obj\Debug\Deliveries.csproj.CoreCompileInputs.cache
+C:\Users\Alex Pedersen\Desktop\PCS4\Week 2\pcs4, week 2 delivering deliverables STARTUP\Deliveries\obj\Debug\Deliveries.exe
+C:\Users\Alex Pedersen\Desktop\PCS4\Week 2\pcs4, week 2 delivering deliverables STARTUP\Deliveries\obj\Debug\Deliveries.pdb
+C:\Users\Alex Pedersen\Desktop\PCS4\Week 3\week2-repeat\Deliveries\bin\Debug\Deliveries.exe.config
+C:\Users\Alex Pedersen\Desktop\PCS4\Week 3\week2-repeat\Deliveries\bin\Debug\Deliveries.exe
+C:\Users\Alex Pedersen\Desktop\PCS4\Week 3\week2-repeat\Deliveries\bin\Debug\Deliveries.pdb
+C:\Users\Alex Pedersen\Desktop\PCS4\Week 3\week2-repeat\Deliveries\obj\Debug\Deliveries.csprojResolveAssemblyReference.cache
+C:\Users\Alex Pedersen\Desktop\PCS4\Week 3\week2-repeat\Deliveries\obj\Debug\Deliveries.Form1.resources
+C:\Users\Alex Pedersen\Desktop\PCS4\Week 3\week2-repeat\Deliveries\obj\Debug\Deliveries.Properties.Resources.resources
+C:\Users\Alex Pedersen\Desktop\PCS4\Week 3\week2-repeat\Deliveries\obj\Debug\Deliveries.csproj.GenerateResource.Cache
+C:\Users\Alex Pedersen\Desktop\PCS4\Week 3\week2-repeat\Deliveries\obj\Debug\Deliveries.csproj.CoreCompileInputs.cache
+C:\Users\Alex Pedersen\Desktop\PCS4\Week 3\week2-repeat\Deliveries\obj\Debug\Deliveries.exe
+C:\Users\Alex Pedersen\Desktop\PCS4\Week 3\week2-repeat\Deliveries\obj\Debug\Deliveries.pdb
