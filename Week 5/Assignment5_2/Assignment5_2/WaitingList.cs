@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Assignment5_2
 {
     class WaitingList
     {
-        public delegate void WaitingRoomHandler(WaitingList wl);
-        public event WaitingRoomHandler waitingRoomHandler;
+        public delegate void FiveOrBigger();
+        public event FiveOrBigger fiveOrBigger;
 
         private Node firstNode;
         private Node lastNode;
@@ -32,36 +33,114 @@ namespace Assignment5_2
             {
                 newNode.Next = firstNode;
                 firstNode = newNode;
+
                 if (Count() >= 5)
                 {
-                    waitingRoomHandler(this);
+                    fiveOrBigger(); //#Triggered
                 }
             }
         }
-
-        public string ShowFive() //does not work if list is empthy.
+        public string Show()
         {
-            string s = "";
-            int count = 0;
-            for (Node n = firstNode; n.Next != null; n = n.Next)
+            if (Count() <= 0)
             {
-                while(count < 5)
+                return "No patients added\n";
+            }
+            else
+            {
+                string s = "";
+                for (Node n = firstNode; n.Next != null; n = n.Next)
                 {
-                    s += $"Name:{n.Patient.Name}, Reason:{n.Patient.Reason}\n";
+                    s += $"Name:{n.Patient.Name}, Reason:{n.Patient.Reason}, Doctor: {n.Patient.Doctor}\n";
+                }
+                return s;
+            }
+        }
+        public void Remove(Node node)
+        {
+            if (firstNode == null)
+                return;
+
+            if (firstNode == node)
+            {
+                firstNode = firstNode.Next;
+            }
+            else
+            {
+                Node previous = firstNode;
+                Node current = firstNode.Next;
+
+                while (current != null)
+                {
+                    if (current.Next == node)
+                    {
+                        previous.Next = current.Next;
+                        break;
+                    }
+
+                    previous = current;
+                    current = current.Next;
+                }
+            }
+        }
+        public int Count()
+        {
+            int count = 0;
+            if(firstNode == null)
+            {
+                return -1;
+            }
+            else
+            {
+                for (Node n = firstNode; n.Next != null; n = n.Next)
+                {
                     count++;
                 }
+                return count;
             }
-            return s;
         }
-
-        public int Count() //does not work if list is empthy.
+        public int Count(string Doctor)
         {
             int count = 0;
-            for (Node n = firstNode; n.Next != null; n = n.Next)
+            if (firstNode == null)
             {
-                count++;
+                return -1;
             }
-            return count;
+            else
+            {
+                for (Node n = firstNode; n.Next != null; n = n.Next)
+                {
+                    if(n.Patient.Doctor.Equals(Doctor))
+                    {
+                        count++;
+                    }
+                }
+                return count;
+            }
         }
+        public string NextPatient(string Doctor)
+        {
+            string nextPatient = null;
+            if(firstNode == null)
+            {
+                return "No patients left! Time for a break!";
+            } 
+            else
+            {
+                for(Node n = firstNode; n.Next != null; n = n.Next)
+                {
+                    if (n.Patient.Doctor.Equals(Doctor) || n.Patient.Doctor.Equals("No Preference"))
+                    {
+                        if(nextPatient == null)
+                        {
+                            nextPatient = n.Patient.Name;
+                            Remove(n);//Moving person out of waiting list.
+                        }
+                    }
+                }
+                return nextPatient;
+            }
+        }
+
     }
 }

@@ -20,12 +20,73 @@ namespace Assignment5_2
 
         private void Btn_Register_Click(object sender, EventArgs e)
         {
-            waitingList.Add(new Patient(TB_Name.Text, TB_Reason.Text));
+            waitingList.fiveOrBigger += FiveOrBigger;
+
+            if(Rb_John.Checked)
+            {
+                waitingList.Add(new Patient(TB_Name.Text, TB_Reason.Text, "John"));
+            }
+            else if(Rb_Carla.Checked)
+            {
+                waitingList.Add(new Patient(TB_Name.Text, TB_Reason.Text, "Carla"));
+            }
+            else if(Rb_NoPreference.Checked)
+            {
+                waitingList.Add(new Patient(TB_Name.Text, TB_Reason.Text, "No Preference"));
+            }
+            else
+            {
+                MessageBox.Show("Please select a preference");
+            }
+            UpdateLabels();
         }
 
-        public void WR_Limit_reached()
+        private void Btn_NextPatientJohn_Click(object sender, EventArgs e)
         {
-            GB_WaitingRoom.Text = waitingList.ShowFive();
+            if(waitingList.Count() <= 0)
+            {
+                GB_John.Text = $"Dr. John\nNo Patiens Waiting";
+            }
+            else
+            {
+                GB_John.Text = $"Dr. John\nCurrent Patient: {waitingList.NextPatient("John")}";
+                GB_WaitingRoom.Text = $"Waiting Room\n{waitingList.Show()}";
+
+                UpdateLabels();
+            }
+        }
+
+        private void Btn_NextPatientCarla_Click(object sender, EventArgs e)
+        {
+            if (waitingList.Count() <= 0)
+            {
+                GB_Carla.Text = $"Dr. Carla\nNo Patiens Waiting";
+            }
+            else
+            {
+                GB_Carla.Text = $"Dr. Carla\nCurrent Patient: {waitingList.NextPatient("Carla")}";
+                GB_WaitingRoom.Text = $"Waiting Room\n{waitingList.Show()}";
+
+                UpdateLabels();
+            }
+        }
+
+        //Events
+        public void FiveOrBigger()
+        {
+            if (waitingList.Count() >= 5)
+            {
+                GB_WaitingRoom.Text = $"Waiting Room\n{waitingList.Show()}";
+            }
+        }
+
+        public void UpdateLabels()
+        {
+            Label_TotalWaiting.Text = $"in waiting room: {waitingList.Count().ToString()}";
+            Label_JohnPref.Text = $"Waiting for John: {waitingList.Count("John").ToString()}";
+            Label_CarlaPref.Text = $"Waiting for Carla: {waitingList.Count("Carla").ToString()}";
+            Label_CNoPref.Text = $"No Preference: {waitingList.Count("No Preference").ToString()}";
+            Label_JNoPref.Text = Label_CNoPref.Text;
         }
     }
 }

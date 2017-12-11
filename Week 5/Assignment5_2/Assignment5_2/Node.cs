@@ -16,6 +16,5 @@ namespace Assignment5_2
             Patient = p;
             Next = null;
         }
-        
     }
 }

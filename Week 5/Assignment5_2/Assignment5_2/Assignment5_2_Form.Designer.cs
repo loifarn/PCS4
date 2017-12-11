@@ -41,8 +41,18 @@
             this.GB_WaitingRoom = new System.Windows.Forms.GroupBox();
             this.GB_John = new System.Windows.Forms.GroupBox();
             this.GB_Carla = new System.Windows.Forms.GroupBox();
+            this.Btn_NextPatientCarla = new System.Windows.Forms.Button();
+            this.Btn_NextPatientJohn = new System.Windows.Forms.Button();
+            this.Label_JohnPref = new System.Windows.Forms.Label();
+            this.Label_JNoPref = new System.Windows.Forms.Label();
+            this.Label_CNoPref = new System.Windows.Forms.Label();
+            this.Label_CarlaPref = new System.Windows.Forms.Label();
+            this.Label_TotalWaiting = new System.Windows.Forms.Label();
             this.GB_Registration.SuspendLayout();
             this.GB_DoctorPref.SuspendLayout();
+            this.GB_WaitingRoom.SuspendLayout();
+            this.GB_John.SuspendLayout();
+            this.GB_Carla.SuspendLayout();
             this.SuspendLayout();
             // 
             // GB_Registration
@@ -151,6 +161,7 @@
             // GB_WaitingRoom
             // 
             this.GB_WaitingRoom.BackColor = System.Drawing.Color.Lime;
+            this.GB_WaitingRoom.Controls.Add(this.Label_TotalWaiting);
             this.GB_WaitingRoom.Location = new System.Drawing.Point(12, 229);
             this.GB_WaitingRoom.Name = "GB_WaitingRoom";
             this.GB_WaitingRoom.Size = new System.Drawing.Size(352, 224);
@@ -161,6 +172,9 @@
             // GB_John
             // 
             this.GB_John.BackColor = System.Drawing.Color.Fuchsia;
+            this.GB_John.Controls.Add(this.Label_JNoPref);
+            this.GB_John.Controls.Add(this.Label_JohnPref);
+            this.GB_John.Controls.Add(this.Btn_NextPatientJohn);
             this.GB_John.Location = new System.Drawing.Point(370, 12);
             this.GB_John.Name = "GB_John";
             this.GB_John.Size = new System.Drawing.Size(395, 211);
@@ -171,12 +185,80 @@
             // GB_Carla
             // 
             this.GB_Carla.BackColor = System.Drawing.Color.Fuchsia;
+            this.GB_Carla.Controls.Add(this.Label_CNoPref);
+            this.GB_Carla.Controls.Add(this.Label_CarlaPref);
+            this.GB_Carla.Controls.Add(this.Btn_NextPatientCarla);
             this.GB_Carla.Location = new System.Drawing.Point(370, 229);
             this.GB_Carla.Name = "GB_Carla";
             this.GB_Carla.Size = new System.Drawing.Size(395, 224);
             this.GB_Carla.TabIndex = 2;
             this.GB_Carla.TabStop = false;
             this.GB_Carla.Text = "Dr. Carla";
+            // 
+            // Btn_NextPatientCarla
+            // 
+            this.Btn_NextPatientCarla.Location = new System.Drawing.Point(6, 195);
+            this.Btn_NextPatientCarla.Name = "Btn_NextPatientCarla";
+            this.Btn_NextPatientCarla.Size = new System.Drawing.Size(75, 23);
+            this.Btn_NextPatientCarla.TabIndex = 0;
+            this.Btn_NextPatientCarla.Text = "Next Patient";
+            this.Btn_NextPatientCarla.UseVisualStyleBackColor = true;
+            this.Btn_NextPatientCarla.Click += new System.EventHandler(this.Btn_NextPatientCarla_Click);
+            // 
+            // Btn_NextPatientJohn
+            // 
+            this.Btn_NextPatientJohn.Location = new System.Drawing.Point(6, 182);
+            this.Btn_NextPatientJohn.Name = "Btn_NextPatientJohn";
+            this.Btn_NextPatientJohn.Size = new System.Drawing.Size(75, 23);
+            this.Btn_NextPatientJohn.TabIndex = 1;
+            this.Btn_NextPatientJohn.Text = "Next Patient";
+            this.Btn_NextPatientJohn.UseVisualStyleBackColor = true;
+            this.Btn_NextPatientJohn.Click += new System.EventHandler(this.Btn_NextPatientJohn_Click);
+            // 
+            // Label_JohnPref
+            // 
+            this.Label_JohnPref.AutoSize = true;
+            this.Label_JohnPref.Location = new System.Drawing.Point(221, 16);
+            this.Label_JohnPref.Name = "Label_JohnPref";
+            this.Label_JohnPref.Size = new System.Drawing.Size(87, 13);
+            this.Label_JohnPref.TabIndex = 2;
+            this.Label_JohnPref.Text = "Waiting for John:";
+            // 
+            // Label_JNoPref
+            // 
+            this.Label_JNoPref.AutoSize = true;
+            this.Label_JNoPref.Location = new System.Drawing.Point(221, 31);
+            this.Label_JNoPref.Name = "Label_JNoPref";
+            this.Label_JNoPref.Size = new System.Drawing.Size(81, 13);
+            this.Label_JNoPref.TabIndex = 4;
+            this.Label_JNoPref.Text = "No preference: ";
+            // 
+            // Label_CNoPref
+            // 
+            this.Label_CNoPref.AutoSize = true;
+            this.Label_CNoPref.Location = new System.Drawing.Point(221, 30);
+            this.Label_CNoPref.Name = "Label_CNoPref";
+            this.Label_CNoPref.Size = new System.Drawing.Size(81, 13);
+            this.Label_CNoPref.TabIndex = 6;
+            this.Label_CNoPref.Text = "No preference: ";
+            // 
+            // Label_CarlaPref
+            // 
+            this.Label_CarlaPref.AutoSize = true;
+            this.Label_CarlaPref.Location = new System.Drawing.Point(221, 15);
+            this.Label_CarlaPref.Name = "Label_CarlaPref";
+            this.Label_CarlaPref.Size = new System.Drawing.Size(88, 13);
+            this.Label_CarlaPref.TabIndex = 5;
+            this.Label_CarlaPref.Text = "Waiting for Carla:";
+            // 
+            // Label_TotalWaiting
+            // 
+            this.Label_TotalWaiting.AutoSize = true;
+            this.Label_TotalWaiting.Location = new System.Drawing.Point(227, 15);
+            this.Label_TotalWaiting.Name = "Label_TotalWaiting";
+            this.Label_TotalWaiting.Size = new System.Drawing.Size(81, 13);
+            this.Label_TotalWaiting.TabIndex = 0;
+            this.Label_TotalWaiting.Text = "In waiting room:";
             // 
             // Assignment5_2_Form
             // 
@@ -193,6 +275,12 @@
             this.GB_Registration.PerformLayout();
             this.GB_DoctorPref.ResumeLayout(false);
             this.GB_DoctorPref.PerformLayout();
+            this.GB_WaitingRoom.ResumeLayout(false);
+            this.GB_WaitingRoom.PerformLayout();
+            this.GB_John.ResumeLayout(false);
+            this.GB_John.PerformLayout();
+            this.GB_Carla.ResumeLayout(false);
+            this.GB_Carla.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -212,6 +300,13 @@
         private System.Windows.Forms.RadioButton Rb_NoPreference;
         private System.Windows.Forms.RadioButton Rb_Carla;
         private System.Windows.Forms.RadioButton Rb_John;
+        private System.Windows.Forms.Button Btn_NextPatientJohn;
+        private System.Windows.Forms.Button Btn_NextPatientCarla;
+        private System.Windows.Forms.Label Label_JNoPref;
+        private System.Windows.Forms.Label Label_JohnPref;
+        private System.Windows.Forms.Label Label_CNoPref;
+        private System.Windows.Forms.Label Label_CarlaPref;
+        private System.Windows.Forms.Label Label_TotalWaiting;
     }
 }
 
