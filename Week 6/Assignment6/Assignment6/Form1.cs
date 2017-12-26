@@ -24,7 +24,7 @@ namespace Assignment6
         {
             try
             {
-                _tree.Root.Insert(TB_Input.Text);
+                _tree.Root.Add(TB_Input.Text);
                 Label_Add.Text = $"Added: {TB_Input.Text}";
                 
             }
@@ -91,7 +91,10 @@ namespace Assignment6
 
         private void Btn_Test_Click(object sender, EventArgs e)
         {
-            _tree.Root.Insert("test");
+            string one = "one";
+            string two = "two";
+
+            TB_Input.Text = two.CompareTo(one).ToString();
         }
 
         private void Btn_Preorder_Click(object sender, EventArgs e)
@@ -148,6 +151,26 @@ namespace Assignment6
             catch
             {
                 MessageBox.Show("An error has occured");
+            }
+        }
+
+        private void Btn_Height_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(_tree.Root.Height(_tree.Root).ToString());
+        }
+
+        //doesnt work.
+        private void Btn_Parent_Click(object sender, EventArgs e)
+        {
+            Node result = _tree.Root.FindParent(_tree.Root, new Node(TB_Input.Text));
+
+            if(result == null)
+            {
+                MessageBox.Show($"null");
+            }
+            else
+            {
+                MessageBox.Show($"Parent: {result.Value}");
             }
         }
     }

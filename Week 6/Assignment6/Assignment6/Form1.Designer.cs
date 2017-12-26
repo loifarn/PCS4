@@ -40,6 +40,8 @@
             this.Btn_Preorder = new System.Windows.Forms.Button();
             this.Btn_Postorder = new System.Windows.Forms.Button();
             this.Btn_Inorder = new System.Windows.Forms.Button();
+            this.Btn_Height = new System.Windows.Forms.Button();
+            this.Btn_Parent = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Btn_Add
@@ -155,11 +157,33 @@
             this.Btn_Inorder.UseVisualStyleBackColor = true;
             this.Btn_Inorder.Click += new System.EventHandler(this.Btn_Inorder_Click);
             // 
+            // Btn_Height
+            // 
+            this.Btn_Height.Location = new System.Drawing.Point(93, 183);
+            this.Btn_Height.Name = "Btn_Height";
+            this.Btn_Height.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Height.TabIndex = 12;
+            this.Btn_Height.Text = "Height";
+            this.Btn_Height.UseVisualStyleBackColor = true;
+            this.Btn_Height.Click += new System.EventHandler(this.Btn_Height_Click);
+            // 
+            // Btn_Parent
+            // 
+            this.Btn_Parent.Location = new System.Drawing.Point(93, 212);
+            this.Btn_Parent.Name = "Btn_Parent";
+            this.Btn_Parent.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Parent.TabIndex = 13;
+            this.Btn_Parent.Text = "Parent";
+            this.Btn_Parent.UseVisualStyleBackColor = true;
+            this.Btn_Parent.Click += new System.EventHandler(this.Btn_Parent_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(372, 274);
+            this.Controls.Add(this.Btn_Parent);
+            this.Controls.Add(this.Btn_Height);
             this.Controls.Add(this.Btn_Inorder);
             this.Controls.Add(this.Btn_Postorder);
             this.Controls.Add(this.Btn_Preorder);
@@ -193,6 +217,8 @@
         private System.Windows.Forms.Button Btn_Preorder;
         private System.Windows.Forms.Button Btn_Postorder;
         private System.Windows.Forms.Button Btn_Inorder;
+        private System.Windows.Forms.Button Btn_Height;
+        private System.Windows.Forms.Button Btn_Parent;
     }
 }
 
