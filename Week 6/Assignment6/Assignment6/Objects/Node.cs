@@ -97,7 +97,6 @@ namespace Assignment6
 
         public void Show(List<Node> list, Node node)
         {
-
             if(node == null)
             {
                 list = null;
@@ -109,6 +108,36 @@ namespace Assignment6
             }
             Show(list, node.Right);
             Show(list, node.Left);
+        }
+
+        public void PreOrder(List<Node> list, Node node)
+        {
+            if (node != null)
+            {
+                list.Add(node);
+                PreOrder(list, node.Left);
+                PreOrder(list, node.Right);
+            }
+        }
+
+        public void InOrder(List<Node> list, Node node)
+        {
+            if (node != null)
+            {
+                InOrder(list, node.Left);
+                list.Add(node);
+                InOrder(list, node.Right);
+            }
+        }
+
+        public void PostOrder(List<Node> list, Node node)
+        {
+            if (node != null)
+            {
+                PostOrder(list, node.Left);
+                PostOrder(list, node.Right);
+                list.Add(node);
+            }
         }
     }
 }

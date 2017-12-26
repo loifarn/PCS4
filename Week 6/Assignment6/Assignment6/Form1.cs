@@ -93,5 +93,62 @@ namespace Assignment6
         {
             _tree.Root.Insert("test");
         }
+
+        private void Btn_Preorder_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<Node> list = new List<Node>();
+                _tree.Root.PreOrder(list, _tree.Root);
+                LB_Output.Items.Clear();
+
+                foreach (Node n in list)
+                {
+                    LB_Output.Items.Add(n.Value);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("An error has occured");
+            }
+        }
+
+        private void Btn_Postorder_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<Node> list = new List<Node>();
+                _tree.Root.PostOrder(list, _tree.Root);
+                LB_Output.Items.Clear();
+
+                foreach (Node n in list)
+                {
+                    LB_Output.Items.Add(n.Value);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("An error has occured");
+            }
+        }
+
+        private void Btn_Inorder_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<Node> list = new List<Node>();
+                _tree.Root.InOrder(list, _tree.Root);
+                LB_Output.Items.Clear();
+
+                foreach (Node n in list)
+                {
+                    LB_Output.Items.Add(n.Value);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("An error has occured");
+            }
+        }
     }
 }

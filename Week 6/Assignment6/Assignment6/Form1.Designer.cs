@@ -37,6 +37,9 @@
             this.Btn_Test = new System.Windows.Forms.Button();
             this.Label_Add = new System.Windows.Forms.Label();
             this.Label_Count = new System.Windows.Forms.Label();
+            this.Btn_Preorder = new System.Windows.Forms.Button();
+            this.Btn_Postorder = new System.Windows.Forms.Button();
+            this.Btn_Inorder = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Btn_Add
@@ -96,7 +99,7 @@
             // 
             // Btn_Test
             // 
-            this.Btn_Test.Location = new System.Drawing.Point(283, 222);
+            this.Btn_Test.Location = new System.Drawing.Point(285, 241);
             this.Btn_Test.Name = "Btn_Test";
             this.Btn_Test.Size = new System.Drawing.Size(75, 23);
             this.Btn_Test.TabIndex = 6;
@@ -122,11 +125,44 @@
             this.Label_Count.TabIndex = 8;
             this.Label_Count.Text = "Count:";
             // 
+            // Btn_Preorder
+            // 
+            this.Btn_Preorder.Location = new System.Drawing.Point(12, 183);
+            this.Btn_Preorder.Name = "Btn_Preorder";
+            this.Btn_Preorder.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Preorder.TabIndex = 9;
+            this.Btn_Preorder.Text = "Preorder";
+            this.Btn_Preorder.UseVisualStyleBackColor = true;
+            this.Btn_Preorder.Click += new System.EventHandler(this.Btn_Preorder_Click);
+            // 
+            // Btn_Postorder
+            // 
+            this.Btn_Postorder.Location = new System.Drawing.Point(12, 212);
+            this.Btn_Postorder.Name = "Btn_Postorder";
+            this.Btn_Postorder.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Postorder.TabIndex = 10;
+            this.Btn_Postorder.Text = "Postorder";
+            this.Btn_Postorder.UseVisualStyleBackColor = true;
+            this.Btn_Postorder.Click += new System.EventHandler(this.Btn_Postorder_Click);
+            // 
+            // Btn_Inorder
+            // 
+            this.Btn_Inorder.Location = new System.Drawing.Point(12, 241);
+            this.Btn_Inorder.Name = "Btn_Inorder";
+            this.Btn_Inorder.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Inorder.TabIndex = 11;
+            this.Btn_Inorder.Text = "Inorder";
+            this.Btn_Inorder.UseVisualStyleBackColor = true;
+            this.Btn_Inorder.Click += new System.EventHandler(this.Btn_Inorder_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(370, 257);
+            this.ClientSize = new System.Drawing.Size(372, 274);
+            this.Controls.Add(this.Btn_Inorder);
+            this.Controls.Add(this.Btn_Postorder);
+            this.Controls.Add(this.Btn_Preorder);
             this.Controls.Add(this.Label_Count);
             this.Controls.Add(this.Label_Add);
             this.Controls.Add(this.Btn_Test);
@@ -154,6 +190,9 @@
         private System.Windows.Forms.Button Btn_Test;
         private System.Windows.Forms.Label Label_Add;
         private System.Windows.Forms.Label Label_Count;
+        private System.Windows.Forms.Button Btn_Preorder;
+        private System.Windows.Forms.Button Btn_Postorder;
+        private System.Windows.Forms.Button Btn_Inorder;
     }
 }
 
